@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Weather Model Fight Club</title><meta name="description" content="GFS and ECMWF forecasts enter. One matchup leaves.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="noise"></div><div class="radar radar-a"></div><div class="radar radar-b"></div>
+  <header><a class="brand" href="/" aria-label="Weather Model Fight Club home"><span class="brand-icon">WM</span><span>Weather Model<br><b>Fight Club</b></span></a><nav class="top-nav"><a href="/archive.html">FIGHT ARCHIVE</a><div class="live"><i></i> LIVE MODEL DATA</div></nav></header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">THE ATMOSPHERE HAS ENTERED THE RING</p>
+      <h1>FORECASTS<br><em>THROW DOWN.</em></h1>
+      <p class="dek">Two global weather models. Three meteorological rounds.<br>One brutally honest scorecard.</p>
+      <form id="fight-form">
+        <label><span>FIGHT VENUE</span><div class="input-wrap"><b>⌖</b><input id="location" name="location" value="Atlanta, GA" autocomplete="off" required aria-label="Location"></div></label>
+        <label><span>FIGHT TIME</span><div class="input-wrap"><b>◷</b><input id="time" name="time" type="datetime-local" required aria-label="Forecast time"></div></label>
+        <div class="form-actions"><button id="submit" type="submit"><span>START MATCHUP</span><b>›</b></button><button id="randomize" class="ghost-button" type="button">⚄ SURPRISE ME</button></div>
+      </form>
+      <p class="hint">Choose any hour in the next 10 days · Local venue time</p>
+    </section>
+    <section id="status" class="status" hidden role="status"></section>
+    <section id="arena" class="arena" hidden aria-live="polite">
+      <div id="weather-fx" class="weather-fx" aria-hidden="true"></div>
+      <div class="event-strip"><span id="venue">ATLANTA, GA</span><b>★ THREE-DAY TOURNAMENT ★</b><span id="fight-time">AUG 21 · 4:00 PM</span></div>
+      <section class="venue-map"><div class="map-copy"><p class="eyebrow">FIGHT VENUE</p><h2 id="map-location">ATLANTA, GA</h2><p id="map-coordinates">33.749° N · 84.388° W</p><a id="map-link" href="https://www.openstreetmap.org" target="_blank" rel="noopener noreferrer">OPEN FULL MAP ↗</a></div><div class="map-frame"><iframe id="location-map" title="Map of the forecast location" loading="lazy" referrerpolicy="no-referrer" src="about:blank"></iframe><div class="map-reticle" aria-hidden="true"><i></i><i></i><b>VENUE</b></div></div></section>
+      <div id="fighters" class="fighters">
+        <article class="fighter blue"><span class="corner">BLUE CORNER</span><div class="globe">G</div><div><h2>GFS</h2><p>“THE AMERICAN”</p><small>NOAA · GLOBAL FORECAST SYSTEM</small></div></article>
+        <div class="vs"><small>TRIPLE</small><b>VS</b><small>THREAT</small></div>
+        <article class="fighter red"><span class="corner">RED CORNER</span><div><h2>ECMWF</h2><p>“THE EUROPEAN”</p><small>ECMWF · IFS 0.25°</small></div><div class="globe">E</div></article>
+        <div class="vs third"><b>VS</b></div>
+        <article class="fighter gold"><span class="corner">GOLD CORNER</span><div class="globe">I</div><div><h2>ICON</h2><p>“THE GERMAN ENGINE”</p><small>DWD · ICON SEAMLESS</small></div></article>
+      </div>
+      <nav id="day-tabs" class="day-tabs" aria-label="Forecast day"></nav>
+      <div id="rounds" class="rounds"></div>
+      <div class="scoreboard">
+        <div><p class="eyebrow">JUDGES’ SCORECARD</p><h2>MODEL AGREEMENT</h2><p class="fine">Similarity of these forecasts—not forecast confidence.</p></div>
+        <div class="score"><b id="score-number">—</b><span>/ 100</span></div>
+        <div class="meter"><i id="meter-fill"></i></div><strong id="verdict">AWAITING DECISION</strong>
+      </div>
+      <section class="trend-board"><div><p class="eyebrow">BEST OF THREE</p><h2>AGREEMENT BY DAY</h2></div><div id="trend-chart" class="trend-chart"></div><div class="series-verdict"><b id="average-score">—</b><span>3-DAY AVG</span><strong id="trend-label">—</strong></div></section>
+      <section class="bracket"><p class="eyebrow">CONSENSUS TABLE</p><h2>TALE OF THE TAPE</h2><div id="consensus-table"></div><p>“Closest to consensus” means nearest the three-model median—not most accurate.</p></section>
+      <div class="commentary"><div class="mic">◉</div><div><p class="eyebrow">RINGSIDE COMMENTARY</p><blockquote id="commentary"></blockquote><small id="commentary-source"></small></div></div>
+      <div class="share-row"><button id="share" class="ghost-button" type="button">↗ SHARE FIGHT CARD</button></div>
+      <details><summary>How the judges score it <span>＋</span></summary><p>Agreement starts at 100. Differences create capped penalties: temperature (20°F cap, 35% weight), precipitation probability (100-point cap, 40%), and wind (30 mph cap, 25%). If a round is unavailable, its weight is removed and the rest are renormalized. This score measures similarity, not which model is right.</p></details>
+      <p class="attribution">Forecast data: Open-Meteo · GFS, ECMWF, and ICON remain independent model predictions.</p>
+    </section>
+  </main>
+  <footer><span>WEATHER MODEL FIGHT CLUB</span><span>DATA, NOT DESTINY.</span></footer>
+  <script type="module" src="/app.js"></script>
+</body></html>
