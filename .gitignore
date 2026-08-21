@@ -1,0 +1,4 @@
+.testmuai/evidence/
+.testmuai/tests/output-*/.internal/
+.testmuai/tests/output-*/playwright-python-code/
+.testmuai/chrome-profile/
