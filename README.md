@@ -11,7 +11,7 @@ Built for the Kane CLI Hackathon 2026.
 ## Demo
 
 - **Live app:** [kane-cli-hackathon-2026.vercel.app](https://kane-cli-hackathon-2026.vercel.app/)
-- **Video walkthrough:** _Add the Loom or YouTube URL before submission_
+- **Video walkthrough:** [Watch on YouTube](https://youtu.be/utCLIjNICDw)
 
 ![Weather Model Fight Club matchup launcher](img/Visible.jpg)
 
@@ -225,8 +225,8 @@ Forecast, geocoding, and historical weather data are provided through [Open-Mete
 
 - [x] Deploy the production build
 - [x] Add the production URL to the README
-- [ ] Record and upload the walkthrough video
-- [ ] Add the Loom or YouTube URL above
+- [x] Record and upload the walkthrough video
+- [x] Add the YouTube URL above
 - [x] Add a strong hero screenshot
 - [x] Run `npm test` one final time
 - [ ] Verify the submitted repository branch contains the latest commit
